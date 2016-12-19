@@ -1,0 +1,186 @@
+@charset "utf-8";
+/**
+ * Created by 魏娜 on 2016/12/14
+ * 移动端圣诞节活动
+ */
+
+/*新版图片路径*/
+$pathMImg:'../image';
+
+html{
+	font-size: 20px;
+}
+body{
+	height: 100%;
+}
+.act-bg{
+	max-width:800px;
+	margin:0 auto;
+	width:100%;
+	background:url($pathMImg +"/christmas/banner.jpg") no-repeat center top;
+	background-size: 100%;
+	.banner{
+		padding-top:70%;
+	}
+	img{
+		max-width: 100%;
+		height: auto;
+	}
+	.footer{
+		margin-top:10%;
+	}
+}
+.act-main{
+	width:99%;
+	margin:0 auto;
+	color:#fff;
+	background:#fff;
+	.main-rule{
+		width:86.11%;
+		margin:0 auto;
+		position:relative;
+		background:#9c2827;
+		border-radius:.35rem;
+		padding: .2rem 0 1rem;
+	}
+	h3{
+		margin-left:3.1%;
+		font-size:1rem;
+		line-height:1.8rem;
+	}
+	.ling{
+		width:7.43%;
+		position:absolute;
+		top: -2vw;
+		left: -3.5vw;
+	}
+	.rule{
+		width:91.3%;
+		margin:0 auto;
+		font-size:.7rem;
+		line-height:1rem;
+		background:#6d1c1b;
+		border-radius:.35rem;
+		padding:.5rem .25rem .75rem;
+		p{
+			overflow:hidden;
+		}
+	}
+	.num{
+		float:left;
+		width:8%;
+		overflow:hidden;
+	}
+	.txt{
+		float:right;
+		width:92%;
+	}
+	.yellow{
+		color:#e4ff00;
+	}
+	.grandpa{
+		width:115%;
+		position:absolute;
+		bottom: -17.3vw;
+		left: -6.6vw;
+	}
+	.main-table{
+		width:96%;
+		background:#225b00;
+		margin:0 auto;
+		border-radius:.2rem;
+		box-shadow:0 0 0 3px #3a9d05;
+	}
+	.tit-list{
+		width: 96%;
+	    margin: 0 auto;
+	    height:1.5rem;
+	    line-height:1.5rem;
+	    li{
+	    	float:left;
+	    	text-align:center;
+	    	font-size:.7rem;
+	    }
+	}
+	.table-tit{
+		font-size:1rem;
+		text-align:center;
+		line-height:1.75rem;
+		background:#184000;
+		border-bottom:2px solid #112d00;
+		border-top-left-radius:.2rem;
+		border-top-right-radius:.2rem;
+	}
+	.table-list{
+		overflow-y:scroll;
+		table{
+			width:96%;
+			margin: 0 auto;
+			text-align: center;
+			font-size:.7rem;
+		}
+		td{
+			color:#e4ff00;
+			text-align: center;
+			vertical-align: middle;
+			height:1.2rem;
+			line-height:1.2rem;
+		}
+		.name{
+			width: 3.5rem;
+			margin:0 auto;
+			white-space: nowrap;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		}
+	}
+	.my-table{
+		margin:30% auto 13%; 
+		.table-list{
+			height:6rem;
+		}		
+		.w1{
+			width:31%;
+		}
+		.w2{
+			width:37%;
+		}
+		.w3{
+			width:32%;
+		}
+		.no-data{
+			height:6rem;
+		}
+		
+	}
+	.notice-table{
+		.table-list{
+			height:12rem;
+		}
+		.w1{
+			width:25%;
+		}
+		.w2{
+			width:26%;
+		}
+		.w3{
+			width:24%;
+		}
+		.w4{
+			width:25%;
+		}
+		.no-data{
+			height:12rem;
+		}
+	}
+}
+
+$basicRem:400px / 20;
+@function rem($px){
+	@return ($px / $basicRem) * 1rem;
+}
+.try{
+	width:rem(400px);
+}
+
+
