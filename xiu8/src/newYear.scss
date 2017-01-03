@@ -1,0 +1,140 @@
+@charset "UTF-8";
+//px转换函数
+@function px2rem( $px ){
+	@return $px*320/$designWidth/20 + rem;
+}
+$designWidth:1080;
+
+/*新版图片路径*/
+$pathMImg:'../image';
+
+body{
+	width:px2rem(1080);
+	margin:0 auto;
+}
+
+.act-bg{
+	width:px2rem(1080);
+	margin:0 auto;
+	background:#1a1d2e url($pathMImg +"/newYear/banner.jpg") no-repeat center top;
+	background-size:contain;
+	color:#f2f5ff;
+	.banner{
+		padding:px2rem(990) 0 px2rem(80);
+	}	
+	.footer{
+		img{
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.act-main{
+	background:#1a1d2e url($pathMImg +"/newYear/snow.png") repeat-y;
+	background-size:contain;
+	.box{
+		width:px2rem(988);
+		border:px2rem(8) solid #262a44;
+		margin:0 auto;
+		border-radius:.35rem;
+		margin-bottom:px2rem(150);
+		position:relative;
+	}
+	h3{
+		position:absolute;
+		top:- px2rem(90);
+		left:px2rem(30);
+		width:px2rem(275);
+		height:px2rem(91);
+		padding:px2rem(65) 0 0 px2rem(155);
+		background:#1a1d2e url($pathMImg +"/newYear/title.png") no-repeat;
+		background-size:contain;
+		font-size:px2rem(48);
+		font-family:"SimHei";
+	}
+	.main-rule{
+		font-size:px2rem(42);
+	}
+	.rule{
+		width:px2rem(845);
+		margin:px2rem(90) auto px2rem(70);
+		line-height:px2rem(78);
+	}
+	.tit-list,.table-list{
+		width:px2rem(950);
+		margin:0 auto;
+	}
+	.tit-list{
+		font-size:px2rem(46);
+		height:px2rem(130);
+		line-height:px2rem(130);
+		padding-top:px2rem(85);
+		border-bottom:px2rem(6) solid #262a44;
+		li{
+			float:left;
+			text-align:center;
+		}
+	}
+	.table-list{
+		font-size:px2rem(42);
+		overflow-y:auto;
+		overflow-x:hidden;
+		table{
+			width:px2rem(948);
+			margin:px2rem(35) auto 0;
+			text-align:center;
+		}
+		td{
+			vertical-align: middle;
+			height:px2rem(100);
+			line-height:px2rem(100);
+		}
+	}
+	.my-table{
+		.w1{
+			width:px2rem(235);
+		}
+		.w2{
+			width:px2rem(365);
+		}
+		.w3{
+			width:px2rem(350);
+		}
+		.table-list{
+			height:px2rem(450);
+		}
+		.no-data{
+			height:px2rem(400);
+		}	
+	}
+	.notice-table{
+		.w1{
+			width:px2rem(193);
+		}
+		.w2{
+			width:px2rem(215);
+		}
+		.w3{
+			width:px2rem(242);
+		}
+		.w4{
+			width:px2rem(300);
+		}
+		.table-list{
+			height:px2rem(740);
+		}
+		.no-data{
+			height:px2rem(650);
+		}	
+	}
+	.name{
+		width:px2rem(190);
+		margin:0 auto;
+		white-space: nowrap;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	}
+
+}
+
+
