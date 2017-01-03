@@ -47,7 +47,7 @@ body,.wrap{
 		margin:0 auto;
 		overflow:hidden;
 		li{
-			float:left;
+			display:inline-block;
 			position:relative;
 			width:px2rem(315);
 			height:px2rem(195);
@@ -55,12 +55,13 @@ body,.wrap{
 			overflow:hidden;
 		}
 		.select{
-			width:px2rem(312);
-			height:px2rem(192);
+			width:px2rem(313);
+			height:px2rem(193);
 			border:px2rem(1) solid #F64747;
 			border-radius:px2rem(18);
 		}
-		.corner{
+		.select::after{
+			content:"";
 			position:absolute;
 			top:0;
 			right:0;
