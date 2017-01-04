@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>微信签到</title>
+	<title>微信充值</title>
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="Cache-Control" content="no-transform">
 	<meta name="hotcss" content="max-width=1080">
@@ -15,7 +15,7 @@
 	<div class="wrap">
 		<div class="recharge">
 			<span class="txt">充值账户：</span>
-			<input type="text" class="input" maxlength="6" placeholder="请输入秀吧ID">
+			<input type="number" class="input" maxlength="6" placeholder="请输入秀吧ID">
 		</div>
 		<div class="re-list">
 			<ul>
@@ -47,10 +47,28 @@
 		</div>
 		<div class="other">
 			<span class="txt">其他金额</span>
-			<input type="text" class="input" maxlength="" placeholder="输入充值金额">
+			<input type="number" class="input" maxlength="" placeholder="输入充值金额">
 			<span class="multiple">¥×<i>1000</i><em class="icon"></em></span>
 		</div>
 		<a href="javascript:void(0);" class="btn">微信支付</a>
+	</div>
+	<!-- 以下是弹窗 -->
+	<div class="xiu-mask"></div>
+	<div class="xiu-alert" style="display: none">
+		<h3 class="alert-title">充值提示</h3>
+		<p class="alert-txt">您要充值的秀吧ID不存在，请重新输入</p>
+		<div class="btn-assembly"><button>关闭</button></div>
+	</div>
+	<div class="xiu-alert" style="display: none">
+		<h3 class="alert-title">充值成功</h3>
+		<p class="alert-txt">3秒后自动关闭</p>
+	</div>
+	<div class="xiu-alert">
+		<h3 class="alert-title">充值提示</h3>
+		<p class="alert-txt">您将为以下账户充值</p>
+		<p class="alert-txt">充值ID：654896486（一条**小蛇）</p>
+		<p class="alert-txt">充值金额：<span class="col-f64">999999999</span>￥</p>
+		<div class="btn-assembly"><button class="mr80">修改</button><button class="col-f64">充值</button></div>
 	</div>
 	<script>
 		/*var aa=function(){
