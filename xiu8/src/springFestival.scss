@@ -1,0 +1,183 @@
+@charset "utf-8";
+/**
+ * Created by weina on 2017/01/05.
+ * 2017春节活动
+ */
+
+/* 定义-公共变量 */
+//@import "../../_config";
+
+//$pathPcActImg:'/dist/img/pc/activity/';
+
+/*活动图片路径*/
+$pathPcActImg:'../image/';
+
+html,body{min-width: 1280px;}
+.act-bg{
+	width:100%;
+	height:1024px;
+	background:url($pathPcActImg + 'springFestival/banner.jpg') center top no-repeat;
+	.banner{
+	  	width: 100%;
+	  	padding-top: 1024px;
+	}
+	.act-main{
+		height:1500px;
+	  	width:100%;
+	  	background:url($pathPcActImg + 'springFestival/bg1.jpg') repeat;
+	  	color: #fff;
+	}
+	h3{
+		width:100%;
+		height:192px;
+		background:url($pathPcActImg + 'springFestival/rule.png') top center no-repeat;
+		text-indent:-9999px;
+	}
+	.re-tit{
+		margin-top:122px;
+		background-image:url($pathPcActImg + 'springFestival/reward.png');
+	}
+	.copyright{
+		width:350px;
+		margin:70px auto;
+		font-size:18px;
+		font-family:"SimHei";
+		color:#eac528;
+	}
+}
+.act-txt{
+	position: relative;
+	width:1200px;
+	margin:0 auto;	
+	padding-top:45px;
+	.text{
+		position:relative;
+		width:1027px;
+		height:345px;
+		margin:0 auto;
+		padding:95px 0 0 95px;
+		background:url($pathPcActImg + 'springFestival/bg2.jpg') repeat;
+		box-shadow: 0 0 10px #562525;
+		p{
+			line-height:36px;
+			font-size:18px;
+			font-family: "SimHei";
+		}
+	}
+	.my-btn{
+		position:absolute;
+		top:35px;
+		right:30px;
+		width:240px;
+		height:58px;
+		background:url($pathPcActImg + 'springFestival/button.png') no-repeat;
+	}
+	.gan{
+		position:absolute;
+		top:-16px;
+		left:-34px;
+		width:1195px;
+		height:32px;
+		background:url($pathPcActImg + 'springFestival/gang.png') no-repeat;
+	}
+	.cloud-l{
+		position:absolute;
+		top:110px;
+		left:-116px;
+		width:164px;
+		height:81px;
+		background:url($pathPcActImg + 'springFestival/cloud-l.png') no-repeat;
+	}
+	.cloud-r{
+		position:absolute;
+		bottom:10px;
+		right:-65px;
+		width:117px;
+		height:58px;
+		background:url($pathPcActImg + 'springFestival/cloud-r.png') no-repeat;
+	}
+}
+.reward{
+	.text{
+		height:225px;
+	}
+	.cloud-l{
+		top:265px;
+		left:-116px;
+	}
+	.cloud-r{
+		bottom:225px;
+		right:-65px;
+	}
+}
+.my-packet-dlg{
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    margin: -230px 0 0 -460px;
+    width: 920px;
+    height: 460px;
+    color: #fcd079;
+    background:url($pathPcActImg + 'springFestival/bg2.jpg') repeat;
+    font-size:18px;
+    font-family: "SimHei";
+    box-shadow: 0 0 10px #562525;
+}
+.dlg-cont{
+	position: relative;
+	width:100%;
+	.close{
+		position:absolute;
+		top:-85px;
+		right:18px;
+		width:47px;
+		height:67px;
+		background:url($pathPcActImg + 'springFestival/close.png') no-repeat;
+	}
+	.gan{
+		position:absolute;
+		top:-20px;
+		left:-36px;
+		width:995px;
+		height:32px;
+		background:url($pathPcActImg + 'springFestival/gang2.png') no-repeat;
+	}
+	h3{
+		position: relative;
+		z-index: 1;
+		width:382px;
+		height:91px;
+		margin:10px auto 30px;
+		background:url($pathPcActImg + 'springFestival/text.png') no-repeat;
+		text-indent:-999px;
+	}
+	.title{
+		width:750px;
+		margin:0 auto;
+		line-height:40px;
+		overflow:hidden;
+		li{
+			float:left;
+			width:375px;
+			text-align:center;
+			border-bottom:1px solid #fcd079;
+		}
+	}
+	.packget-list{
+		width:750px;
+		height:220px;
+		margin:0 auto;
+	}
+	table{
+		width:750px;
+		margin:0 auto;
+	}
+	td{
+		width:375px;
+		height:46px;
+		text-align:center;
+	}
+}
+
+

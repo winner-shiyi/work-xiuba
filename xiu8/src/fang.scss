@@ -1,0 +1,74 @@
+@charset "utf-8";
+/**
+ * Created by weina on 2017/01/05.
+ * 2017春节活动
+ */
+
+/* 定义-公共变量 */
+//@import "../../_config";
+
+//$pathPcActImg:'/dist/img/pc/activity/';
+
+/*活动图片路径*/
+$pathPcActImg:'../image/';
+
+.right{
+	width: 940px;
+	height:470px;
+	padding: 15px 20px 30px;
+	margin:20px auto;
+	background:#e89292;
+}
+.title{
+	font-size: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+.room-admin{
+	padding-top:16px;
+	table{
+		td,th{
+			text-align:center;
+			border:1px solid #ccc;
+		}
+		th{
+			line-height:44px;
+		}
+		td{
+			line-height:42px;
+			.admin,.owner{
+				color:#3295fe;
+				text-decoration:underline;
+			}
+			.name{
+				width:130px;
+				margin:0 auto;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+				overflow:hidden;
+			}
+		}
+		.w1{
+			width:99px;
+		}
+		.w2{
+			width:93px;
+		}
+		.w3{
+			width:89px;
+		}
+		.w4{
+			width:134px;
+		}
+		.w5{
+			width:165px;
+		}
+		.w6{
+			width:165px;
+		}
+		.w7{
+			width:154px;
+		}
+	}
+}
