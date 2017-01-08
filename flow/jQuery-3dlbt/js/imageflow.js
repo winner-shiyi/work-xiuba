@@ -3,7 +3,7 @@ function ImageFlow() {
     /* Setting option defaults */
     this.defaults =
 	{
-	    animationSpeed: 50,             /* Animation speed in ms */
+	    animationSpeed: 55,             /* Animation speed in ms */
 	    aspectRatio: 2.3,          /* 容器的纵横比（宽度/高度）Aspect ratio of the ImageFlow container (width divided by height) */
 	    buttons: false,          /* Toggle navigation buttons */
 	    captions: false,           /* 标题提示Toggle captions */
@@ -526,6 +526,7 @@ function ImageFlow() {
                         {
                             case false:
                                 image.onclick = function () { my.glideTo(this.i); };
+                                image.style.border="20px solid transparent";//去掉边框
                                 break;
 
                             default:
@@ -533,10 +534,13 @@ function ImageFlow() {
                                 if (image.url !== '')
                                 {
                                     image.onclick = my.onClick;
+                                    image.style.border="20px solid red"; //这里可以实现点击的加边框
+                                    
                                 }
                                 break;
                         }
                         image.style.zIndex = my.zIndex;
+                        
                     }
                     catch (e)
                     { }
@@ -582,7 +586,7 @@ function ImageFlow() {
     {
         /* Check for jumppoints */
         var jumpTarget, clonedImageID;
-        if (my.circular)
+        if (my.circular)//如果循环的话
         {
             /* Trigger left jumppoint */
             if (imageID + 1 === my.imageFocusMax)
@@ -1281,14 +1285,19 @@ domReady(function ()
     var instanceOne = new ImageFlow();
     instanceOne.init({ 
         ImageFlowID: 'starsIF',
-        captions: false,
+		startID: 1,
+		buttons: true,
+		imageFocusM: 1.0, //获得焦点的图片的倍数 百分比
+		imageScaling: true, //切换图像缩放Toggle image scaling
+	    imagesHeight: 0.6,//0.65默认值 ，图片们的父级div，占整个容器div的高度百分比
+	    imagesM:1.5, //默认值为1，设置为2的时候，所有图片的深度更深的视觉，其实是所有图片的高度，宽度是设为1的时候的一半。所有图片的倍数 百分比
+        onClick: function () { window.open(this.url,'_blank'); },   /* 点击时候跳转新页面打开 */
+        reflections: true, //有无倒影
+        preloadImagesText :  '图片载入中...',//图片载入的提示文字
+        reflectionP: 0.5,//每张图片之间的底部对齐设置
+        captions: false,//没有 底下的图标标题
         slider: false,//无滚动条
-        reflections: true, //无倒影
-        reflectionGET: '&bgc=009cec',
-        //reflectionP: 0.0,每张图片之间的底部对齐设置
-        //captions: false,没有 底下的图标标题
-
         slideshowAutoplay:false,
-        startID: 1
+        xStep: 90 //图片x轴间距
     });
 });
