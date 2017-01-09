@@ -7,7 +7,8 @@
 	<meta http-equiv="Cache-Control" content="no-transform">
 	<meta name="hotcss" content="max-width=1080">
 	<meta name="format-detection" content="telephone=no" />
-	<link type="text/css" rel="stylesheet" href="../dist/common.css">
+	<link type="text/css" rel="stylesheet" href="../dist/common-m.css">
+	<!-- <link type="text/css" rel="stylesheet" href="//s2.xiu8.com/dist/css/m/common/common.css?v=20161129"> -->
 	<link type="text/css" rel="stylesheet" href="../dist/sign.css">
 	<script src="../js/hotcss.js"></script>
 </head>
@@ -19,7 +20,7 @@
 		</div>
 		<div class="re-list">
 			<ul>
-				<li>
+				<li class="select">
 					<p class="money">¥6元</p>
 					<p class="unit">6000<span class="re-icon"></span></p>
 				</li>
@@ -39,7 +40,7 @@
 					<p class="money">¥666元</p>
 					<p class="unit">666000<span class="re-icon"></span></p>
 				</li>
-				<li class="select">
+				<li>
 					<p class="money">¥1314元</p>
 					<p class="unit">1314000<span class="re-icon"></span></p>
 				</li>
@@ -53,7 +54,7 @@
 		<a href="javascript:void(0);" class="btn">微信支付</a>
 	</div>
 	<!-- 以下是弹窗 -->
-	<div class="xiu-mask"></div>
+	<div class="xiu-mask f-dn"></div>
 	<div class="xiu-alert" style="display: none">
 		<h3 class="alert-title">充值提示</h3>
 		<p class="alert-txt">您要充值的秀吧ID不存在，请重新输入</p>
@@ -63,7 +64,7 @@
 		<h3 class="alert-title">充值成功</h3>
 		<p class="alert-txt">3秒后自动关闭</p>
 	</div>
-	<div class="xiu-alert">
+	<div class="xiu-alert" style="display: none">
 		<h3 class="alert-title">充值提示</h3>
 		<p class="alert-txt">您将为以下账户充值</p>
 		<p class="alert-txt">充值ID：654896486（一条**小蛇）</p>
