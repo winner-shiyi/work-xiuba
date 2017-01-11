@@ -3,41 +3,41 @@ function ImageFlow() {
     /* Setting option defaults */
     this.defaults =
 	{
-	    animationSpeed: 55,             /* Animation speed in ms */
-	    aspectRatio: 2.3,          /* 容器的纵横比（宽度/高度）Aspect ratio of the ImageFlow container (width divided by height) */
-	    buttons: false,          /* Toggle navigation buttons */
-	    captions: false,           /* 标题提示Toggle captions */
-	    circular: true,          /* 循环 */
-	    imageCursor: 'pointer',      /* Cursor type for all images - default is 'default' */
-	    ImageFlowID: 'imageflow',    /* Default id of the ImageFlow container */
-	    imageFocusM: 1.0,            /*??图片的显示比例 Multiplicator for the focussed image size in percent */
-	    imageFocusMax: 3,              /* 左右二侧图片数量 */
-	    imagePath: '',             /* Path to the images relative to the reflect_.php script */
-	    imageScaling: true,           /* 切换图像缩放Toggle image scaling */
-	    imagesHeight: 0.65,           /* ??图片高度在div的缩放比例 */
-	    imagesM: 1.2,            /* ??所有图片的显示比例 */
+	    animationSpeed: 50,             /* 动画速度 单位ms */
+	    aspectRatio: 1.964,          /* 容器的纵横比（宽度/高度）*/
+	    buttons: false,          /* 切换前后图片的按钮 */
+	    captions: false,           /* 图片标题 */
+	    circular: false,          /* 循环 */
+	    imageCursor: 'default',      /* 鼠标移动图片上的形状 */
+	    ImageFlowID: 'imageflow',    /* 动画容器名称 */
+	    imageFocusM: 1.0,            /*获得焦点的图片的展示比例*/
+	    imageFocusMax: 4,              /* 左右二侧图片数量 */
+	    imagePath: '',             /* 关于 reflect_.php script脚本的路径*/
+	    imageScaling: true,           /* 切换图像缩放 */
+	    imagesHeight: 0.67,           /* 图片的父级div占整个容器div的高度百分比 */
+	    imagesM: 1.0,            /* 所有图片的显示视觉深度 */
 	    onClick: function () { document.location = this.url; },   /* 点击时候跳转的设定 */
-	    opacity: false,          /* 切换图像的透明度 */
+	    opacity: false,          /* 图像的透明度 */
 	    opacityArray: [10, 8, 6, 4, 2],   /* 透明效果从0-10，数组中第一个为聚焦图像的透明度 */
 	    percentLandscape: 118,            /* Scale landscape format */
 	    percentOther: 120,            /* Scale portrait and square format */
 	    preloadImages: true,           /* Toggles loading bar (false: requires img attributes height and width) */
-	    reflections: true,           /* 是否有倒影 Toggle reflections */
+	    reflections: false,           /* 是否有反射 */
 	    reflectionGET: '',             /* Pass variables via the GET method to the reflect_.php script */
-	    reflectionP: 0.5,            /* 在源图像的反射高度Height of the reflection in percent of the source image */
+	    reflectionP: 0.5,            /* 在原图像的反射高度 */
 	    reflectionPNG: false,          /* Toggle reflect2.php or reflect3.php */
 	    reflectPath: '',             /* Path to the reflect_.php script */
-	    scrollbarP: 0.6,            /* 滚动条宽度比 Width of the scrollbar in percent */
-	    slider: true,           /* 表示底部的滚动条是否需要 Toggle slider */
-	    sliderCursor: 'e-resize',     /* 滚动游标类型 Slider cursor type - default is 'default' */
-	    sliderWidth: 14,             /* Width of the slider in px */
+	    scrollbarP: 0.6,            /* 滚动条宽度比 */
+	    slider: true,           /* 进度条 */
+	    sliderCursor: 'e-resize',     /* 进度条游标类型 */
+	    sliderWidth: 14,             /*进度条宽度 单位px */
 	    slideshow: true,          /* Toggle slideshow */
 	    slideshowSpeed: 3000,           /* Time between slides in ms */
-	    slideshowAutoplay: true,          /* Toggle automatic slideshow play on startup */
-	    startID: 1,              /* Image ID to begin with */
-	    glideToStartID: true,           /* 切换滑动动画开始标识 Toggle glide animation to start ID */
-	    startAnimation: false,          /* 启动动画，启动时整体动画从右边进入 Animate images moving in from the right on startup */
-	    xStep: 90             /* 调整每张图片之间的 间隔Step width on the x-axis in px */
+	    slideshowAutoplay: false,          /* 自动播放 */
+	    startID: 1,              /* 起始播放的图片id */
+	    glideToStartID: true,           /* 切换滑动动画开始标识*/
+	    startAnimation: false,          /* 启动动画，启动时整体动画从右边进入*/
+	    xStep: 90             /* 调整每张图片之间的x轴距离 单位px */
 	};
 
 
@@ -46,10 +46,14 @@ function ImageFlow() {
 
 
     /* Initiate ImageFlow */
-    this.init = function (options) {
+    this.init = function (options,callBack) {//我修改
         /* Evaluate options */
         for (var name in my.defaults) {
             this[name] = (options !== undefined && options[name] !== undefined) ? options[name] : my.defaults[name];
+        }
+
+        if(callBack){//我修改
+            this.callBack = callBack;
         }
 
         /* Try to get ImageFlow div element */
@@ -447,6 +451,7 @@ function ImageFlow() {
 
 
     /* Main animation function */
+    // 表示移动的距离
     this.moveTo = function (x)
     {
         this.current = x;
@@ -526,7 +531,6 @@ function ImageFlow() {
                         {
                             case false:
                                 image.onclick = function () { my.glideTo(this.i); };
-                                image.style.border="20px solid transparent";//去掉边框
                                 break;
 
                             default:
@@ -534,8 +538,7 @@ function ImageFlow() {
                                 if (image.url !== '')
                                 {
                                     image.onclick = my.onClick;
-                                    image.style.border="20px solid red"; //这里可以实现点击的加边框
-                                    
+                                    //image.style.border="20px solid red"; //这里可以实现点击的加边框 
                                 }
                                 break;
                         }
@@ -583,7 +586,7 @@ function ImageFlow() {
 
     /* Initializes image gliding animation */
     this.glideTo = function (imageID)
-    {
+    { 
         /* Check for jumppoints */
         var jumpTarget, clonedImageID;
         if (my.circular)//如果循环的话
@@ -687,19 +690,22 @@ function ImageFlow() {
         }
 
         /* Move the images to the jump target */
-        if (jumpTarget)
-        {
+        if (jumpTarget){
             my.moveTo(jumpTarget);
+            
         }
-
+        
         /* Animate gliding to new x position */
         if (my.busy === false)
         {
             my.busy = true;
             my.animate();
         }
-    };
 
+        //动画完成后执行回调；
+        my.callBack && my.callBack(imageID);//我修改
+
+    };
 
     /* Animates image gliding */
     this.animate = function () {
@@ -1067,20 +1073,24 @@ function ImageFlow() {
 	    },
 
 	    /* Remove events */
-	    removeEvent: function (obj, type, fn) {
-	        if (obj.removeEventListener) {
-	            obj.removeEventListener(type, fn, false);
-	        }
-	        else if (obj.detachEvent) {
-	            /* The IE breaks if you're trying to detach an unattached event /msdn.microsoft.com/en-us/library/ms536411(VS.85).aspx */
-	            if (obj[type + fn] === undefined) {
-	                alert('Helper.removeEvent » Pointer to detach event is undefined - perhaps you are trying to detach an unattached event?');
-	            }
-	            obj.detachEvent('on' + type, obj[type + fn]);
-	            obj[type + fn] = null;
-	            obj['e' + type + fn] = null;
-	        }
-	    },
+	    removeEvent: function( obj, type, fn )
+        {
+            if (obj.removeEventListener)
+            {
+                obj.removeEventListener( type, fn, false );
+            }
+            else if (obj.detachEvent)
+            {
+                /* The IE breaks if you're trying to detach an unattached event http://msdn.microsoft.com/en-us/library/ms536411(VS.85).aspx */
+                /*if(obj[type+fn] === undefined)
+                {
+                    alert('Helper.removeEvent » Pointer to detach event is undefined - perhaps you are trying to detach an unattached event?');
+                }
+                obj.detachEvent( 'on'+type, obj[type+fn] );*/
+                obj[type+fn] = null;
+                obj['e'+type+fn] = null;
+            }
+        },
 
 	    /* Set image opacity */
 	    setOpacity: function (object, value) {
@@ -1282,22 +1292,5 @@ domReadyEvent.init();
 /* Create ImageFlow instances when the DOM structure has been loaded */
 domReady(function ()
 {
-    var instanceOne = new ImageFlow();
-    instanceOne.init({ 
-        ImageFlowID: 'starsIF',
-		startID: 1,
-		buttons: true,
-		imageFocusM: 1.0, //获得焦点的图片的倍数 百分比
-		imageScaling: true, //切换图像缩放Toggle image scaling
-	    imagesHeight: 0.6,//0.65默认值 ，图片们的父级div，占整个容器div的高度百分比
-	    imagesM:1.5, //默认值为1，设置为2的时候，所有图片的深度更深的视觉，其实是所有图片的高度，宽度是设为1的时候的一半。所有图片的倍数 百分比
-        onClick: function () { window.open(this.url,'_blank'); },   /* 点击时候跳转新页面打开 */
-        reflections: true, //有无倒影
-        preloadImagesText :  '图片载入中...',//图片载入的提示文字
-        reflectionP: 0.5,//每张图片之间的底部对齐设置
-        captions: false,//没有 底下的图标标题
-        slider: false,//无滚动条
-        slideshowAutoplay:false,
-        xStep: 90 //图片x轴间距
-    });
+    
 });
