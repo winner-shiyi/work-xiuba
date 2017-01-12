@@ -36,7 +36,9 @@ body,.wrap{
 	.input{
 		display:inline-block;
 		width:px2rem(560);
-		line-height:px2rem(156);
+		padding:px2rem(30) 0;
+		height:px2rem(96);
+		line-height:px2rem(96);
 		font-size:px2rem(45);
 		color: #3F3F3F;
 	}
@@ -116,7 +118,9 @@ body,.wrap{
 			background-size:contain;
 		}
 		.input{
-			line-height:px2rem(136);
+			padding:px2rem(20);
+			height:px2rem(96);
+			line-height:px2rem(96);
 		}
 	}
 	.btn{
