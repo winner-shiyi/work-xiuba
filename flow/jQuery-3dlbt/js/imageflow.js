@@ -37,13 +37,12 @@ function ImageFlow() {
 	    startID: 1,              /* 起始播放的图片id */
 	    glideToStartID: true,           /* 切换滑动动画开始标识*/
 	    startAnimation: false,          /* 启动动画，启动时整体动画从右边进入*/
-	    xStep: 90             /* 调整每张图片之间的x轴距离 单位px */
+	    xStep: 90            /* 调整每张图片之间的x轴距离 单位px */
 	};
 
 
     /* Closure for this */
     var my = this;
-
 
     /* Initiate ImageFlow */
     this.init = function (options,callBack) {//我修改
@@ -94,7 +93,6 @@ function ImageFlow() {
             }
         }
     };
-
 
     /* Create HTML Structure */
     this.createStructure = function () {
@@ -223,7 +221,6 @@ function ImageFlow() {
         return success;
     };
 
-
     /* Manage loading progress and call the refresh function */
     this.loadingProgress = function () {
         var p = my.loadingStatus();
@@ -269,7 +266,6 @@ function ImageFlow() {
         }
     };
 
-
     /* Return loaded images in percent, set loading bar width and loading text */
     this.loadingStatus = function () {
         var max = my.imagesDiv.childNodes.length;
@@ -300,7 +296,6 @@ function ImageFlow() {
         loadingP.replaceChild(loadingTxt, loadingP.firstChild);
         return finished;
     };
-
 
     /* Cache EVERYTHING that only changes on refresh or resize of the window */
     this.refresh = function () {
@@ -449,7 +444,6 @@ function ImageFlow() {
         my.moveTo(my.current);
     };
 
-
     /* Main animation function */
     // 表示移动的距离
     this.moveTo = function (x)
@@ -549,7 +543,6 @@ function ImageFlow() {
                     { }
                 }
             }
-
             /* Disabled image scaling */
             else
             {
@@ -582,7 +575,6 @@ function ImageFlow() {
             x += my.xStep;
         }
     };
-
 
     /* Initializes image gliding animation */
     this.glideTo = function (imageID)
@@ -706,7 +698,6 @@ function ImageFlow() {
         my.callBack && my.callBack(imageID);//我修改
 
     };
-
     /* Animates image gliding */
     this.animate = function () {
         switch (my.target < my.current - 1 || my.target > my.current + 1) {
@@ -722,7 +713,6 @@ function ImageFlow() {
         }
     };
 
-
     /* Used by user events to call the glideTo function */
     this.glideOnEvent = function (imageID) {
         /* Interrupt slideshow on mouse wheel, keypress, touch and mouse drag */
@@ -733,7 +723,6 @@ function ImageFlow() {
         /* Glide to new imageID */
         my.glideTo(imageID);
     };
-
 
     /* Slideshow function */
     this.Slideshow =
@@ -804,12 +793,10 @@ function ImageFlow() {
 	    }
 	};
 
-
     /* Mouse Wheel support */
     this.MouseWheel =
 	{
 	    init: function () {
-	        /* Init mouse wheel listener */
 	        if (window.addEventListener) {
 	            my.ImageFlowDiv.addEventListener('DOMMouseScroll', my.MouseWheel.get, false);
 	        }
@@ -848,14 +835,11 @@ function ImageFlow() {
 	                change = true;
 	            }
 	        }
-
-	        /* Glide to next (mouse wheel down) / previous (mouse wheel up) image  */
 	        if (change) {
 	            my.glideOnEvent(newImageID);
 	        }
 	    }
 	};
-
 
     /* Mouse Dragging */
     this.MouseDrag =
@@ -935,7 +919,6 @@ function ImageFlow() {
 	        }
 	    }
 	};
-
 
     /* Safari touch events on the iPhone and iPod Touch */
     this.Touch =
@@ -1017,13 +1000,11 @@ function ImageFlow() {
 	            my.Helper.suppressBrowserDefault(e);
 	        }
 	    },
-
 	    stop: function () {
 	        my.Touch.stopX = my.Touch.x;
 	        my.Touch.busy = false;
 	    }
 	};
-
 
     /* Key support */
     this.Key =
@@ -1048,14 +1029,12 @@ function ImageFlow() {
 	                break;
 	        }
 	    },
-
 	    /* Get the current keycode */
 	    get: function (event) {
 	        event = event || window.event;
 	        return event.keyCode;
 	    }
 	};
-
 
     /* Helper functions */
     this.Helper =
@@ -1287,10 +1266,3 @@ var domReadyEvent =
 
 var domReady = function (handler) { domReadyEvent.add(handler); };
 domReadyEvent.init();
-
-
-/* Create ImageFlow instances when the DOM structure has been loaded */
-domReady(function ()
-{
-    
-});
