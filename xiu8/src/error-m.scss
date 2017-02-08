@@ -1,0 +1,47 @@
+@charset "UTF-8";
+//px转换函数
+@function px2rem( $px ){
+	@return $px*320/$designWidth/20 + rem;
+}
+$designWidth:1080;
+
+/*新版图片路径*/
+$pathMImg:'../image/';
+
+body{
+	max-width:px2rem(750);
+	background:#fefefe;
+}
+body,.wrap{
+	margin:0 auto;
+}
+.wrap{
+	width:px2rem(750);
+	.err-pic{
+		width:px2rem(630);
+		height:px2rem(510);
+		margin:px2rem(300) auto px2rem(200);
+		background:url($pathMImg +"error/404bg.jpg") no-repeat center top;
+		background-size:contain;
+	}
+	.err-code,.err-txt{
+		font-family:"SimHei";
+		font-size:px2rem(54);
+		color:#999;
+		line-height:px2rem(100);
+		text-align:center;
+	}
+	.err-txt{
+		margin-bottom:px2rem(50);
+	}
+}
+@media only screen and (min-width:1000px){
+	.wrap .err-pic{
+		width:px2rem(420);
+		height:px2rem(340);
+		margin:px2rem(100) auto px2rem(100);
+	}
+}
+
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>秀吧</title>
+	<meta name="keywords" content="秀吧直播，美女直播，${keywords !'正真的全民直播'}">
+    <meta name="description" content="秀吧直播，美女直播，${description ! '正真的全民直播'}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=decive-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="hotcss" content="max-width=1080">
+
+    <!-- <#tag id="m_common" url="/css/m/common/common.css" type="css"/>
+    <#tag id="mbaseLibs" url="/js/m/libs/mobile.libs.js" type="js"/>
+    <#tag id="hotcss" url="/js/m/libs/hotcss.js" type="js"/> -->
+
+    <link type="text/css" rel="stylesheet" href="http://s2.xiu8.com/dist/css/m/common/common.css?v=20161129">
+	<script src="http://s1.xiu8.com/src/js/m/libs/hotcss.js"></script>
+    <style>
+    /* ！！！注释的部分为，在实际java环境中的写法，这里是为了自己写demo测试能看见 */
+   /*  样式也是先自己demo中用sass写法，转换好后，复制dist的css过来 */
+    	body {
+    	    max-width: 11.11111rem;
+    	    background: #fefefe;
+    	}
+    	.wrap, body {
+    	    margin: 0 auto;
+    	}
+    	.wrap {
+    	    width: 11.11111rem;
+    	}
+    	.wrap .err-pic {
+    	    width: 9.33333rem;
+    	    height: 7.55556rem;
+    	    margin: 4.44444rem auto 2.96296rem;
+            /*如果有背景图片，可以用java的图片变量来写路径*/
+    	     background:url(http://s2.xiu8.com/dist/img/m/common/404bg.jpg) center top no-repeat; 
+            /*background:url(${fn.getConfUrl("imageSource")}/img/m/common/404bg.jpg) center top no-repeat;*/
+    	    background-size: contain;
+    	}
+    	.wrap .err-code, .wrap .err-txt {
+    	    font-family: SimHei;
+    	    font-size: .8rem;
+    	    color: #999;
+    	    line-height: 1.48148rem;
+    	    text-align: center;
+    	}
+    	.wrap .err-txt {
+    	    margin-bottom: .74074rem;
+    	}
+    	@media only screen and (min-width:1000px) {
+    	    .wrap .err-pic {
+    	        width: 6.22222rem;
+    	        height: 5.03704rem;
+    	        margin: 1.48148rem auto;
+    	    }
+    	}
+    </style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="err-pic"></div>
+		<p class="err-code">错误代码：404</p>
+		<p class="err-txt">失败原因：错误的网址</p>
+	</div>
+</body>
+</html>
