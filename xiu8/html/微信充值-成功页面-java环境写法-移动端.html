@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>错误</title>
+	<title>成功</title>
 	<meta name="keywords" content="秀吧直播，美女直播，${keywords !'正真的全民直播'}">
     <meta name="description" content="秀吧直播，美女直播，${description ! '正真的全民直播'}">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,7 +22,7 @@
    /*  样式也是先自己demo中用sass写法，转换好后，复制dist的css过来 */
     	body {
     	    max-width: 11.11111rem;
-    	    background: #fefefe;
+    	    background: #f2f3f5;
     	}
     	.wrap, body {
     	    margin: 0 auto;
@@ -30,29 +30,33 @@
     	.wrap {
     	    width: 11.11111rem;
     	}
-    	.wrap .err-pic {
+    	.wrap .suc-pic {
     	    width: 9.33333rem;
     	    height: 7.55556rem;
     	    margin: 4.44444rem auto 2.96296rem;
             /*如果有背景图片，可以用java的图片变量来写路径*/
-    	   background:url(../image/error/404bg.jpg) center top no-repeat;
-           /*background:url(http://s2.xiu8.com/dist/img/m/common/404bg.jpg) center top no-repeat; */
-            /*background:url(${fn.getConfUrl("imageSource")}/img/m/common/404bg.jpg) center top no-repeat;*/
+            background:url(../image/error/success.jpg) center top no-repeat;
+    	    /* background:url(http://s2.xiu8.com/dist/img/m/common/success.jpg) center top no-repeat;  */
+            /*background:url(${fn.getConfUrl("imageSource")}/img/m/common/success.jpg) center top no-repeat;*/
     	    background-size: contain;
     	}
-    	.wrap .err-code, .wrap .err-txt {
+    	.wrap .suc-code, .wrap .suc-txt {
     	    font-family: SimHei;
             font-family: Helvetica;
     	    font-size: .8rem;
-    	    color: #999;
+    	    color: #333;
     	    line-height: 1.48148rem;
     	    text-align: center;
     	}
-    	.wrap .err-txt {
+    	.wrap .suc-txt {
     	    margin-bottom: .74074rem;
     	}
+        .wrap .num{
+            color:#f34f2d;
+            padding:0 .15rem;
+        }
     	@media only screen and (min-width:1000px) {
-    	    .wrap .err-pic {
+    	    .wrap .suc-pic {
     	        width: 6.22222rem;
     	        height: 5.03704rem;
     	        margin: 1.48148rem auto;
@@ -62,9 +66,9 @@
 </head>
 <body>
 	<div class="wrap">
-		<div class="err-pic"></div>
-		<p class="err-code">错误代码：404</p>
-		<p class="err-txt">失败原因：错误的网址</p>
+		<div class="suc-pic"></div>
+		<p class="suc-code">成功充值<span class="num">1000</span>¥</p>
+		<p class="suc-txt">恭喜您获得<span class="num">1000</span>秀币</p>
 	</div>
 </body>
 </html>

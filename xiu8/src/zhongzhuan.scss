@@ -1,0 +1,60 @@
+@charset "UTF-8";
+//px转换函数
+@function px2rem( $px ){
+	@return $px*320/$designWidth/20 + rem;
+}
+$designWidth:1080;
+
+/*新版图片路径*/
+$pathMImg:'../image/';
+
+body{
+	max-width:px2rem(1080);
+	background:#fff;
+	font-family:Helvetica;
+	//font-family:"SimHei";
+}
+body,.wrap{
+	margin:0 auto;
+}
+.wrap{
+	width:px2rem(1080);
+	.num{
+		font-size:px2rem(110);
+		color:#ff0000;
+		text-align: center;
+		line-height:px2rem(60);
+		margin:px2rem(200) 0 px2rem(150) 0;
+		font-weight:bold;
+	}
+	.reg-box{
+		width:px2rem(1000);
+		margin:0 auto;
+		overflow:hidden;
+		border:px2rem(2) solid #ebeae7;
+		font-size:px2rem(36);
+		li{
+			width:100%;
+			height:px2rem(120);
+			line-height:px2rem(120);
+		}
+		.left{
+			float:left;
+			color:#969ba3;
+			padding-left:px2rem(20);
+		}
+		.right{
+			float:right;
+			color:#333;
+			padding-right:px2rem(20);
+		}
+	}
+	.goods{
+		border-bottom:px2rem(2) solid #ebeae7;
+	}
+	.company{
+
+	}
+}
+
+
