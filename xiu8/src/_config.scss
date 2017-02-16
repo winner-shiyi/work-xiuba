@@ -1,0 +1,89 @@
+@charset "UTF-8";
+//px转换函数
+@function px2rem( $px ){
+    @return $px*320/$designWidth/20 + rem;
+}
+$designWidth:750;
+body{
+    width:px2rem(750);
+    margin:0 auto;  
+}
+
+/*新版图片路径*/
+$pathMImg:'../image';  
+  
+%play-btn{
+    width:px2rem(170);
+    height: px2rem(112);
+    background:url($pathMImg +"/h5-room/play-btn.png") no-repeat 0 0;
+    background-size:contain;
+}
+%pause-btn{
+    width:px2rem(170);
+    height: px2rem(112);
+    background:url($pathMImg +"/h5-room/pause-btn.png") no-repeat 0 0;
+    background-size:contain;
+}  
+%chat-icon{
+    width:px2rem(72);
+    height: px2rem(72);
+    background:url($pathMImg +"/h5-room/chat-icon.png") no-repeat 0 0;
+    background-size:contain;
+}
+%share-icon{
+    width:px2rem(72);
+    height: px2rem(72);
+    background:url($pathMImg +"/h5-room/share-icon.png") no-repeat 0 0;
+    background-size:contain;
+}
+%gift-icon{
+    width:px2rem(72);
+    height: px2rem(72);
+    background:url($pathMImg +"/h5-room/gift-icon.png") no-repeat 0 0;
+    background-size:contain;
+}
+%level-icon{
+    width:px2rem(76);
+    height: px2rem(34);
+    background:url($pathMImg +"/h5-room/levelicon/29.png") no-repeat 0 0;
+    background-size:contain;
+}
+
+%vip-icon{
+    width:px2rem(68);
+    height: px2rem(32);
+    background:url($pathMImg +"/h5-room/vipicon/3.png") no-repeat 0 0;
+    background-size:contain;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

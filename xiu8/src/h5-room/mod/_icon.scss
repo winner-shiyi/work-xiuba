@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.level-1{
+    @extend %level-icon;
+    background-position:0 0;
+}
+
+.vip-1{
+    @extend %vip-icon;
+    background-position:0 0; 
+}
