@@ -219,3 +219,203 @@
         @extend %chat-icon;
     }
 }
+.user-gift-box{
+    position: absolute;
+    bottom:px2rem(538);
+    left:px2rem(-500);
+    width:px2rem(348);
+    height:px2rem(82);
+    background: rgba(0,0,0,0.5);
+    border-radius: px2rem(90);
+    opacity:0;
+    transition-duration:.5s;
+    transition-property:opacity,left;
+    .user-info{
+        dt{
+            position: absolute;
+            left:px2rem(4);
+            top:px2rem(4);
+            width:px2rem(72);
+            height:px2rem(72);
+            background:#fff;
+            border-radius:50%;
+            img{
+                position: absolute;
+                top:50%;
+                left:50%;
+                margin:px2rem(-35) 0 0 px2rem(-35);
+                width:px2rem(70);
+                height:px2rem(70);
+                border-radius:50%;
+            }
+        }
+        dd{
+            position:absolute;
+            top:px2rem(11);
+            left:px2rem(90);
+            font-size: px2rem(26);
+            color: #FFF;
+            p{
+                line-height:px2rem(26);
+            }
+            .name{
+                max-width:px2rem(200);
+                margin-bottom:px2rem(9);
+                white-space:nowrap;
+                text-overflow:ellipsis;
+                overflow:hidden;
+            }
+            .text{
+                font-size:px2rem(22);
+                color:#FFAD24;
+            }
+        }
+    }
+    .gift-icon{
+        position:absolute;
+        right:px2rem(0);
+        top:px2rem(-18);
+        width:px2rem(100);
+        height:px2rem(100);
+        background-repeat:no-repeat;
+        background-position: 0 0;
+    }
+    .gift-num{
+        position:absolute;
+        right:px2rem(-68);
+        top:px2rem(-10);
+        color:#fff;
+        font-size:px2rem(38);
+        -webkit-text-stroke:px2rem(1) #F64747;
+    }
+
+}
+.active{//控制user-gift-box
+    left:px2rem(25);
+    opacity:1;
+}
+.gift-slider-box{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:px2rem(500);
+    background: rgba(0,0,0,0.70);
+    .gift-group{
+        position: relative; 
+        overflow: hidden;
+    }
+    .slider-item{
+        float:left;
+        width:px2rem(750);
+        height:100%;
+        overflow:hidden;
+    }
+    .list{
+        float:left;
+        position:relative;
+        width:px2rem(186);
+        height:px2rem(160);
+        margin-top:px2rem(35);
+        text-align:center;
+        font-size: px2rem(20);
+        color: #FFF;
+        .pic{
+            width:px2rem(100);
+            height:px2rem(100);
+            margin:0 auto;
+            img{
+                width:px2rem(100);
+                height:px2rem(100);
+            }
+        }
+        .money{
+            margin-top:px2rem(3);
+            span{
+                @extend %xiubi-icon;
+                display:inline-block;
+                // vertical-align:middle;
+                margin-left:px2rem(3);
+                width:px2rem(15);
+                height:px2rem(15);
+            }
+        }
+        .exper{
+            color:#ccc;
+        }
+        .active-icon{
+            display:none;
+            @extend %gift-active-icon;
+            position:absolute;
+            top:px2rem(-10);
+            right:px2rem(12);
+            z-index:1;
+        }
+    }
+    .curr{
+        .active-icon{
+            display:block;
+        }
+    }
+    .gift-index{
+        position: absolute;
+        left:0;
+        bottom:px2rem(90);
+        width:100%;
+        height:px2rem(10);
+        text-align:center;
+        font-size:0;
+    }
+    .index-item{
+        display:inline-block;
+        width:px2rem(10);
+        height:px2rem(10);
+        margin: 0 px2rem(6) 0 px2rem(6);
+        border-radius:50%;
+        background:#aaa;
+        box-shadow:0 0 1px 1px rgba(130,130,130,.7);
+        &.curr{
+            background:#fff;
+        }
+    }
+    .gift-bottom{
+        position:absolute;
+        left:0;
+        bottom:0;
+        width:100%;
+        height:px2rem(70);
+        border-top:px2rem(2) solid #fff;
+        border-top-color:rgba(255,255,255,.2);
+    }
+    .recharge{
+        font-size:px2rem(28);
+        color: #F64747;
+        .num{
+            color:#fff;
+            padding-right:px2rem(10);
+        }
+        .xiubi-icon{
+            display:inline-block;
+            width:px2rem(20);
+            height:px2rem(20);
+            @extend %xiubi-icon;
+        }
+    }
+    .arrow1{
+        display:inline-block;
+        width:px2rem(12);
+        height:px2rem(20);
+        @extend %arrow1;
+    }
+    .arrow2{
+        display:inline-block;
+        @extend %arrow2;
+    }
+    
+}
+
+
+
+
+
+

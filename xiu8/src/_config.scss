@@ -55,6 +55,43 @@ $pathMImg:'../image';
     background:url($pathMImg +"/h5-room/vipicon/3.png") no-repeat 0 0;
     background-size:contain;
 }
+%xiubi-icon{
+    width:px2rem(96);
+    height: px2rem(96);
+    background:url($pathMImg +"/h5-room/xiubi-icon.png") no-repeat 0 0;
+    background-size:contain;
+}
+%gift-active-icon{
+    width:px2rem(32);
+    height: px2rem(32);
+    background:url($pathMImg +"/h5-room/gift-active-icon.png") no-repeat 0 0;
+    background-size:contain;
+}
+%arrow1{
+   width:px2rem(30);
+   height: px2rem(52);
+   background:url($pathMImg +"/h5-room/left-arrow-icon.png") no-repeat 0 0;
+   background-size:contain; 
+}
+
+%arrow2{
+    width:px2rem(40);
+    height: px2rem(24);
+    background:url($pathMImg +"/h5-room/up-arrow-icon.png") no-repeat 0 0;
+    background-size:contain; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
