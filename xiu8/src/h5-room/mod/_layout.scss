@@ -56,9 +56,11 @@
         left:px2rem(20);
         width:px2rem(290);
         height:px2rem(72);
-        background: #000;
+        /* background: #000;
+        opacity: 0.5; */
+        background:rgba(0,0,0,.5);
         border-radius: px2rem(52);
-        opacity: 0.5;
+        
         dt{
             position: absolute;
             top:px2rem(2);
@@ -108,7 +110,6 @@
         background:#ccc; 
         transition:all .3s;
     }
-
 }
 .chat-box{
     position:absolute;
@@ -388,14 +389,18 @@
         border-top-color:rgba(255,255,255,.2);
     }
     .recharge{
+        padding-left:px2rem(20);
+        line-height: px2rem(70);
         font-size:px2rem(28);
-        color: #F64747;
+        color:#F64747;
         .num{
             color:#fff;
-            padding-right:px2rem(10);
+            padding:0 px2rem(10);
+            vertical-align: -2px;
         }
         .xiubi-icon{
             display:inline-block;
+            vertical-align:middle;
             width:px2rem(20);
             height:px2rem(20);
             @extend %xiubi-icon;
@@ -403,13 +408,84 @@
     }
     .arrow1{
         display:inline-block;
+        vertical-align:middle;
         width:px2rem(12);
         height:px2rem(20);
         @extend %arrow1;
+        margin-left:px2rem(10);
     }
     .arrow2{
         display:inline-block;
         @extend %arrow2;
+    }
+    .combobox{
+        position:absolute;
+        right:px2rem(175);
+        bottom:0;
+        .input-box{
+            position: relative;
+            width:px2rem(175);
+            height:px2rem(70);
+            outline:none;
+            border:none;
+            /* background:#fff;
+            opacity:.3; */
+            background:rgba(255,255,255,.3);
+            color:#fff;
+        }
+        input{
+            width:px2rem(120);
+            height:px2rem(30);
+            margin:0 px2rem(20);
+            padding:px2rem(20) 0;
+            font-size:px2rem(28);
+            background: transparent;
+            text-align:center;
+        }
+        .arrow2{
+            position: absolute;
+            top:px2rem(30);
+            right:px2rem(12);
+        }
+        .combobox-list{
+            position:absolute;
+            left:px2rem(-40);
+            top:px2rem(-570);
+            width:px2rem(258);
+            height:px2rem(540);
+            background:rgba(0,0,0,.8);
+            border-radius:px2rem(15);
+            &::after{
+                content:"";
+                position:absolute;
+                bottom:px2rem(-39);
+                right:px2rem(120);
+                width:0;
+                height:0;
+                border:px2rem(20) solid transparent;
+                border-top-color:rgba(0,0,0,.8); 
+                border-color:rgba(0,0,0,.8) transparent transparent transparent;
+            }
+            li{
+                color:#fff;
+                font-size:px2rem(30);
+                height:px2rem(60);
+                line-height:px2rem(60);
+            }
+
+        }
+    }
+    .send-btn{
+        position:absolute;
+        right:0;
+        bottom:0;
+        width:px2rem(175);
+        height:px2rem(70);
+        line-height:px2rem(70);
+        text-align:center;
+        font-size: px2rem(30);
+        color:#fff;
+        background: #F64747;
     }
     
 }

@@ -68,18 +68,25 @@ $pathMImg:'../image';
     background-size:contain;
 }
 %arrow1{
-   width:px2rem(30);
-   height: px2rem(52);
+   width:px2rem(12);
+   height: px2rem(20);
    background:url($pathMImg +"/h5-room/left-arrow-icon.png") no-repeat 0 0;
    background-size:contain; 
 }
 
 %arrow2{
-    width:px2rem(40);
-    height: px2rem(24);
+    width:px2rem(20);
+    height: px2rem(12);
     background:url($pathMImg +"/h5-room/up-arrow-icon.png") no-repeat 0 0;
     background-size:contain; 
 }
+
+
+
+
+
+
+
 
 
 
