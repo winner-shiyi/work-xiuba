@@ -11,7 +11,17 @@
         height: px2rem(1334);
         overflow: hidden;
         background: #000;  
+        &.no-playing{
+           height: px2rem(862); 
+        }
     }
+}
+.loading-box{
+    @extend %loading-room;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
 .video-box{
     position: relative;
@@ -282,19 +292,21 @@
         background-position: 0 0;
     }
     .gift-num{
+        width:px2rem(50);
         position:absolute;
-        right:px2rem(-68);
-        top:px2rem(-10);
+        right:px2rem(-56);
+        top:px2rem(-16);
         color:#fff;
-        font-size:px2rem(38);
-        -webkit-text-stroke:px2rem(1) #F64747;
+        font-size:px2rem(65);
+        -webkit-text-stroke:px2rem(2) #4d97d0;
+        font-family: 'brush-script', 'Serif';
     }
+    &.active{//控制user-gift-box
+        left:px2rem(25);
+        opacity:1;
+    }
+}
 
-}
-.active{//控制user-gift-box
-    left:px2rem(25);
-    opacity:1;
-}
 .gift-slider-box{
     position:absolute;
     left:0;
@@ -422,22 +434,29 @@
         position:absolute;
         right:px2rem(175);
         bottom:0;
+        &.active{
+            .combobox-list{
+                display:block;
+            }
+            .arrow2{
+                transform:rotate(180deg);   
+            }
+        }
         .input-box{
             position: relative;
             width:px2rem(175);
             height:px2rem(70);
             outline:none;
             border:none;
-            /* background:#fff;
-            opacity:.3; */
             background:rgba(255,255,255,.3);
             color:#fff;
         }
         input{
             width:px2rem(120);
-            height:px2rem(30);
+            height:px2rem(50);
+            line-height:px2rem(50);
             margin:0 px2rem(20);
-            padding:px2rem(20) 0;
+            padding:px2rem(10) 0;
             font-size:px2rem(28);
             background: transparent;
             text-align:center;
@@ -446,8 +465,10 @@
             position: absolute;
             top:px2rem(30);
             right:px2rem(12);
+            transition:transform 0.2s ease-in; 
         }
         .combobox-list{
+            display:none;
             position:absolute;
             left:px2rem(-40);
             top:px2rem(-570);
@@ -471,8 +492,8 @@
                 font-size:px2rem(30);
                 height:px2rem(60);
                 line-height:px2rem(60);
+                text-align:center;
             }
-
         }
     }
     .send-btn{
@@ -487,7 +508,123 @@
         color:#fff;
         background: #F64747;
     }
+    .lianji-gift{
+        position: absolute;
+        top:px2rem(-192);
+        right:px2rem(-4);
+        @extend %lianji-icon;
+        width:px2rem(290);
+        height:px2rem(215);
+        font-size: px2rem(84);
+        color: #FF9302;
+        text-shadow:0 1px 2px rgba(0,0,0,.5);
+        text-align:center;
+        padding-top:px2rem(70);
+        opacity:0;
+        transition:opacity .5s;
+        &.active{
+            opacity:1;
+        }
+    }
+    .no-select-gift{
+        position: absolute;
+        top:px2rem(-155);
+        right:px2rem(260);
+        width:px2rem(230);
+        height:px2rem(68);
+        line-height:px2rem(68);
+        text-align:center;
+        border-radius:px2rem(100);
+        background:rgba(255,255,255,.7);
+        font-size:px2rem(30);
+        color: #3F3F3F;
+    }
     
+}
+.custom-input-box{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:px2rem(100);
+    background: #F8F8F8;
+    .input-num{
+        width:px2rem(380);
+        height:px2rem(60);
+        line-height:px2rem(60);
+        margin:0 px2rem(94);
+        padding:px2rem(20) 0;
+        font-size:px2rem(36);
+        background: transparent;
+        text-align:center;
+        color:#ccc;
+    }
+    .out-btn{
+        position:absolute;
+        right:0;
+        bottom:0;
+        width:px2rem(182);
+        height:px2rem(100);
+        line-height:px2rem(100);
+        text-align:center;
+        font-size: px2rem(32);
+        color:#fff;
+        background:#ccc;
+    }
+    &.active{
+        .input-num{
+            color: #3F3F3F;
+        }
+        .out-btn{
+            background: #F64747;
+        }
+    }
+}
+.play-end-box{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:px2rem(862);
+    background: #F8F8F8;
+    img{
+        width:100%;
+        height:100%;
+        display:block;
+    }
+    .live-mask{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.3);
+    }
+    .end-info{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+    }
+    .text{
+        text-align:center;
+        font-size:px2rem(64);
+        color: #FFF;
+        margin:px2rem(277) 0 px2rem(122);
+    }
+    .index-btn{
+        display:block;
+        width:px2rem(448);
+        height:px2rem(80);
+        line-height:px2rem(80);
+        margin:0 auto;
+        background:#F64747;
+        color:#fff;
+        text-align:center;
+        border-radius:px2rem(100);
+        font-size:px2rem(32);
+    }
 }
 
 

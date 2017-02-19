@@ -67,6 +67,18 @@ $pathMImg:'../image';
     background:url($pathMImg +"/h5-room/gift-active-icon.png") no-repeat 0 0;
     background-size:contain;
 }
+%lianji-icon{
+    width:px2rem(290);
+    height: px2rem(285);
+    background:url($pathMImg +"/h5-room/lianji-icon.png") no-repeat 0 0;
+    background-size:contain;
+}
+%loading-room{
+    width:px2rem(750);
+    height: px2rem(1334);
+    background:url($pathMImg +"/h5-room/loading.gif") no-repeat 0 0;
+    background-size:contain;
+}
 %arrow1{
    width:px2rem(12);
    height: px2rem(20);
@@ -80,6 +92,25 @@ $pathMImg:'../image';
     background:url($pathMImg +"/h5-room/up-arrow-icon.png") no-repeat 0 0;
     background-size:contain; 
 }
+@font-face {
+    font-family: brush-script;
+    src: url($pathMImg +"/h5-room/brush-script.ttf");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
