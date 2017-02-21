@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>横版首页-pc端</title>
+</head>
+<body>
+	<!-- 横版用户信息 -->
+	<div class="horizontal-user-box f-dn" id="">
+	    <div class="user-info">
+	        <div class="pic">
+	            <img src="${imgCache}/img/avatar/m/1_1/${fourItem.avatar!''}" alt="">
+	            <%if(fourItem.starFlag!0 ==1){%>
+	            <em></em>
+	            <%}%>
+	        </div>
+	        <div class="text">
+	            <p class="name">${fourItem.nickName!""}</p>
+	            <p class="id">ID&nbsp;${fourItem.userId!""}</p>
+	        </div>
+	        <div class="btn xiusta" stadata="{en:'11046',weight:3,xst:'x',et:'mc',tm:'more',v:1,msg:'关注'}"><span id="js-Atten">+&nbsp;关注</span></div>
+	    </div>
+	    <div class="hor-user-data">
+	        <dl class="watch">
+	            <dt>${fourItem.number!""}</dt>
+	            <dd>观看</dd>
+	        </dl>
+	        <dl class="fans">
+	            <dt id="js-followCount">${fourItem.followCount!""}</dt>
+	            <dd>粉丝</dd>
+	        </dl>
+	        <dl class="charm">
+	            <dt>${fourItem.charm!""}</dt>
+	            <dd>魅力值</dd>
+	        </dl>
+	    </div>
+	    <div class="xiu-medal"></div>
+	</div>
+</body>
+</html>
