@@ -16,6 +16,7 @@
         }
     }
 }
+//视频加载完成前的loading动画
 .loading-box{
     @extend %loading-room;
     position: absolute;
@@ -23,6 +24,7 @@
     top: 0;
     z-index: 1;
 }
+//视频流区域
 .video-box{
     position: relative;
     width: 100%;
@@ -53,6 +55,7 @@
         }
     }
 } 
+//头部-主播信息和关注按钮
 .top-anchor-box{
     position:absolute;
     top:0;
@@ -121,6 +124,7 @@
         transition:all .3s;
     }
 }
+//聊天信息展示区域
 .chat-box{
     position:absolute;
     top:px2rem(966);
@@ -150,21 +154,20 @@
     }
     .anchor{
         color:#f64747;
-        //text-shadow:0 -1px 1px #000;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.80);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         margin:0 px2rem(5) 0 px2rem(8);
     }
-    .a-v-1{
+    .a-v-1{//深黄色
         color:#f5ce05;
     }
-    .a-v-2{
+    .a-v-2{//a-v-2粉紫色
         color:#f510f3;
-        
     }
     .msg{
 
     }
 }
+//底部更多精彩按钮、分享按钮、礼物按钮、聊天按钮
 .bottom-share-box{
     position: absolute;
     bottom:px2rem(20);
@@ -230,6 +233,7 @@
         @extend %chat-icon;
     }
 }
+//用户送礼展示区域
 .user-gift-box{
     position: absolute;
     bottom:px2rem(538);
@@ -306,7 +310,7 @@
         opacity:1;
     }
 }
-
+//底部点击礼物按钮展开礼物tip
 .gift-slider-box{
     position:absolute;
     left:0;
@@ -539,8 +543,8 @@
         font-size:px2rem(30);
         color: #3F3F3F;
     }
-    
 }
+//自定义输入数字区域
 .custom-input-box{
     position:absolute;
     left:0;
@@ -580,6 +584,7 @@
         }
     }
 }
+//直播结束主播正在休息
 .play-end-box{
     position:absolute;
     left:0;
