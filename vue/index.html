@@ -6,27 +6,20 @@
 	<script src="./script/vue.js"></script>
 </head>
 <body>
-<div id="app-4">
-  <ol>
-    <li v-for="todo in todos">
-      {{ todo.text }}
-    </li>
-  </ol>
-</div>
+	<div id="app-5">
+		<p>{{message}}</p>
+		<input type="text" v-model="message">
+	</div>
 <script>
-	var app4 = new Vue({
-		  el: '#app-4',
-		  data: {
-		    todos: [
-		      { text: 'Learn JavaScript' },
-		      { text: 'Learn Vue' },
-		      { text: 'Build something awesome' },
-		      { text: '4444' }
-		    ]
-		  }
-		})
 
-	//也可以在控制台 输入 app4.todos = [{"text":"ddddd"}];
+var app5= new Vue({
+	el:'#app-5',
+	data:{
+		message:'hello vue.js'
+	}
+})
+	
+
 </script>
 </body>
 </html>
